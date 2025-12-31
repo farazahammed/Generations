@@ -137,24 +137,9 @@
             z-index: 1;
         }
 
-        /* Special styling for Quiz Generator AI box */
+        /* Quiz Generator styling (no badge) */
         .quiz-box {
             position: relative;
-        }
-
-        .quiz-box::after {
-            content: 'AI POWERED';
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(45deg, #ff8c00, #ff4500);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         footer {
@@ -201,17 +186,12 @@
             100% { transform: translateX(10px) scale(0.9); }
         }
 
-        @keyframes brainPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes robotMove {
-            0% { transform: translateY(0) rotate(0); }
-            25% { transform: translateY(-5px) rotate(5deg); }
-            75% { transform: translateY(5px) rotate(-5deg); }
-            100% { transform: translateY(0) rotate(0); }
+        @keyframes quizGenerate {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            50% { transform: scale(1.2) rotate(0deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
+            100% { transform: scale(1) rotate(0deg); }
         }
 
         @keyframes cardFlip {
@@ -240,7 +220,7 @@
         }
 
         .quiz-icon:hover {
-            animation: robotMove 1s ease-in-out infinite;
+            animation: quizGenerate 1s ease-in-out infinite;
         }
 
         .flashcard-icon:hover {
@@ -273,13 +253,6 @@
             
             .project-box {
                 padding: 20px;
-            }
-            
-            .quiz-box::after {
-                top: 10px;
-                right: 10px;
-                padding: 4px 8px;
-                font-size: 0.7rem;
             }
         }
     </style>
@@ -322,13 +295,13 @@
                 <a href="https://frz-pdf-splitter.netlify.app" class="project-link" target="_blank"></a>
             </div>
 
-            <!-- Quiz Generator AI -->
+            <!-- Quiz Generator -->
             <div class="project-box quiz-box">
                 <div class="project-icon quiz-icon">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-question-circle"></i>
                 </div>
-                <h3 class="project-title">Quiz Generator AI</h3>
-                <p class="project-description">AI-powered tool that creates custom quizzes from topics, PDFs, URLs, or browser content with multiple question types and difficulty levels.</p>
+                <h3 class="project-title">Quiz Generator</h3>
+                <p class="project-description">Create custom quizzes from topics, PDFs, URLs, or browser content with multiple question types and difficulty levels.</p>
                 <a href="https://frz-quiz-generator.netlify.app" class="project-link" target="_blank"></a>
             </div>
 

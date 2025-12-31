@@ -141,6 +141,27 @@
             transition: transform 0.3s ease;
         }
 
+        /* Special styling for Quiz Generator AI box */
+        .quiz-box {
+            position: relative;
+            border: 2px solid rgba(255, 140, 0, 0.3);
+        }
+
+        .quiz-box::after {
+            content: 'NEW';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, #ff8c00, #ff4500);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         footer {
             background-color: rgba(0, 0, 0, 0.3);
             text-align: center;
@@ -172,6 +193,16 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
         @media (max-width: 768px) {
             .main-heading {
                 font-size: 2.5rem;
@@ -189,6 +220,13 @@
             
             .project-box {
                 padding: 20px;
+            }
+            
+            .quiz-box::after {
+                top: 10px;
+                right: 10px;
+                padding: 4px 8px;
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -250,18 +288,18 @@
                 <p class="project-description">A utility to split PDF documents into smaller files or extract specific pages.</p>
                 <a href="https://frz-pdf-splitter.netlify.app" class="project-link" target="_blank"></a>
             </div>
+
+            <!-- Quiz Generator AI -->
+            <div class="project-box quiz-box">
+                <div class="project-icon pulse">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="project-title">Quiz Generator AI</h3>
+                <p class="project-description">AI-powered quiz creation tool that generates custom quizzes based on any topic.</p>
+                <a href="https://frz-quiz-generator.netlify.app" class="project-link" target="_blank"></a>
+            </div>
         </div>
     </div>
-
-     <!-- Quiz Generator -->
-            <div class="project-box">
-                <div class="project-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <h3 class="project-title">Quiz Generator</h3>
-                <p class="project-description"> An fully automatic QUIZ maker helps to learn topics by recalling them.</p>
-                <a href="https://frz-timer.netlify.app" class="project-link" target="_blank"></a>
-            </div>
 
     <footer>
         <div class="copyright">
@@ -305,6 +343,18 @@
             }
         `;
         document.head.appendChild(style);
+        
+        // Add subtle hover effect for quiz box
+        const quizBox = document.querySelector('.quiz-box');
+        if (quizBox) {
+            quizBox.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 15px 30px rgba(255, 140, 0, 0.3)';
+            });
+            
+            quizBox.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
+            });
+        }
     </script>
 </body>
 </html>

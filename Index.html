@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRZ Generations</title>
-    <link rel="icon" type="image/png" href="https://i.ibb.co/QFZzVWCC/Screenshot-2026-01-01-143924.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -18,11 +17,11 @@
             background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%);
             color: #fff;
             min-height: 100vh;
-            padding-bottom: 80px; /* Space for footer */
+            padding-bottom: 100px;
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -58,7 +57,7 @@
             font-size: 1.2rem;
             color: #a5b1c2;
             margin-top: 20px;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.6;
@@ -66,7 +65,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
             margin-top: 40px;
         }
@@ -82,7 +81,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            min-height: 200px;
+            min-height: 220px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -143,38 +142,40 @@
             transition: transform 0.3s ease;
         }
 
-        /* Special styling for Quiz Generator box */
-        .quiz-box {
+        /* All boxes have identical orange styling */
+        .quiz-box,
+        .notes-box,
+        .questionpaper-box,
+        .answerkey-box {
             position: relative;
         }
 
-        /* Special styling for FRZ Notes SSLC box */
-        .notes-box {
-            position: relative;
-            border: 2px solid rgba(75, 192, 192, 0.3);
+        /* Remove all special borders and colors */
+        .notes-box,
+        .questionpaper-box,
+        .answerkey-box {
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .notes-box::after {
-            content: 'SSLC';
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(45deg, #4bc0c0, #36a2eb);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* Remove all special before gradients */
+        .notes-box::before,
+        .questionpaper-box::before,
+        .answerkey-box::before {
+            background: linear-gradient(90deg, #ff8c00, #ffa500);
         }
 
-        .notes-box .project-icon {
-            color: #4bc0c0;
+        /* Remove all special icon colors */
+        .notes-box .project-icon,
+        .questionpaper-box .project-icon,
+        .answerkey-box .project-icon {
+            color: #ff8c00;
         }
 
-        .notes-box::before {
-            background: linear-gradient(90deg, #4bc0c0, #36a2eb);
+        /* Remove all badges/after elements */
+        .notes-box::after,
+        .questionpaper-box::after,
+        .answerkey-box::after {
+            display: none;
         }
 
         footer {
@@ -246,6 +247,18 @@
             50% { transform: translateY(-10px); }
         }
 
+        @keyframes paperGenerate {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.15) rotate(5deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        @keyframes keyGenerate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
         /* Hover animations for icons */
         .profile-icon:hover {
             animation: profileGrow 0.8s ease-in-out;
@@ -271,7 +284,15 @@
             animation: notesWave 1s ease-in-out infinite;
         }
 
-        /* Icon colors - all orange theme except special ones */
+        .questionpaper-icon:hover {
+            animation: paperGenerate 1s ease-in-out infinite;
+        }
+
+        .answerkey-icon:hover {
+            animation: keyGenerate 1s ease-in-out infinite;
+        }
+
+        /* Icon colors - all orange theme */
         .project-icon {
             color: #ff8c00;
         }
@@ -280,22 +301,13 @@
             background: linear-gradient(90deg, #ff8c00, #ffa500);
         }
 
-        /* Special colors for notes box */
-        .notes-box .project-icon {
-            color: #4bc0c0;
-        }
-
-        .notes-box::before {
-            background: linear-gradient(90deg, #4bc0c0, #36a2eb);
-        }
-
         @media (max-width: 768px) {
             .main-heading {
                 font-size: 2.5rem;
             }
             
             .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
         }
 
@@ -306,13 +318,7 @@
             
             .project-box {
                 padding: 20px;
-            }
-            
-            .notes-box::after {
-                top: 10px;
-                right: 10px;
-                padding: 4px 8px;
-                font-size: 0.7rem;
+                min-height: 200px;
             }
         }
     </style>
@@ -321,7 +327,7 @@
     <div class="container">
         <header>
             <h1 class="main-heading">FRZ GENERATIONS</h1>
-            <p class="tagline">A collection of innovative web projects and tools created with passion and precision. Each project showcases unique solutions to modern challenges in education, productivity, and technology created by Faraz Ahammed .</p>
+            <p class="tagline">A collection of innovative web projects and tools created with passion and precision. Each project showcases unique solutions to modern challenges in education, productivity, and technology.</p>
         </header>
 
         <div class="projects-grid">
@@ -384,6 +390,26 @@
                 <p class="project-description">Comprehensive SSLC study notes, revision materials, and practice questions for Kerala state syllabus students.</p>
                 <a href="https://frz-notes.blogspot.com" class="project-link" target="_blank"></a>
             </div>
+
+            <!-- FRZ Question Paper Generator -->
+            <div class="project-box questionpaper-box">
+                <div class="project-icon questionpaper-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3 class="project-title">FRZ Question Paper Generator</h3>
+                <p class="project-description">Generate customized question papers with different question types, difficulty levels, and automatic answer key generation.</p>
+                <a href="https://frzquestionpapergenerator.netlify.app" class="project-link" target="_blank"></a>
+            </div>
+
+            <!-- FRZ Answer Key Generator -->
+            <div class="project-box answerkey-box">
+                <div class="project-icon answerkey-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+                <h3 class="project-title">FRZ Answer Key Generator</h3>
+                <p class="project-description">Create accurate answer keys for question papers with automatic scoring, solution explanations, and answer validation.</p>
+                <a href="https://frzanswerkeygenerator.netlify.app" class="project-link" target="_blank"></a>
+            </div>
         </div>
     </div>
 
@@ -401,16 +427,7 @@
                 const ripple = document.createElement('div');
                 ripple.style.position = 'absolute';
                 ripple.style.borderRadius = '50%';
-                
-                // Different ripple colors for different boxes
-                let rippleColor;
-                if (this.classList.contains('notes-box')) {
-                    rippleColor = 'rgba(75, 192, 192, 0.3)';
-                } else {
-                    rippleColor = 'rgba(255, 140, 0, 0.3)';
-                }
-                
-                ripple.style.backgroundColor = rippleColor;
+                ripple.style.backgroundColor = 'rgba(255, 140, 0, 0.3)';
                 ripple.style.width = '0px';
                 ripple.style.height = '0px';
                 ripple.style.left = '50%';
@@ -442,11 +459,7 @@
         // Enhance hover effects for all boxes
         document.querySelectorAll('.project-box').forEach(box => {
             box.addEventListener('mouseenter', function() {
-                if (this.classList.contains('notes-box')) {
-                    this.style.boxShadow = '0 15px 30px rgba(75, 192, 192, 0.3)';
-                } else {
-                    this.style.boxShadow = '0 15px 30px rgba(255, 140, 0, 0.3)';
-                }
+                this.style.boxShadow = '0 15px 30px rgba(255, 140, 0, 0.3)';
             });
             
             box.addEventListener('mouseleave', function() {
@@ -458,30 +471,16 @@
         const icons = document.querySelectorAll('.project-icon');
         icons.forEach(icon => {
             icon.addEventListener('mouseenter', function() {
-                // Add glow effect with different colors
-                if (this.parentElement.parentElement.classList.contains('notes-box')) {
-                    this.style.textShadow = '0 0 15px rgba(75, 192, 192, 0.7)';
-                } else {
-                    this.style.textShadow = '0 0 15px rgba(255, 140, 0, 0.7)';
-                }
+                // Add glow effect
+                this.style.textShadow = '0 0 15px rgba(255, 140, 0, 0.7)';
+                this.style.color = '#ffa500';
             });
             
             icon.addEventListener('mouseleave', function() {
                 this.style.textShadow = 'none';
+                this.style.color = '#ff8c00';
             });
         });
-        
-        // Special hover effect for notes box
-        const notesBox = document.querySelector('.notes-box');
-        if (notesBox) {
-            notesBox.addEventListener('mouseenter', function() {
-                this.style.boxShadow = '0 15px 30px rgba(75, 192, 192, 0.3)';
-            });
-            
-            notesBox.addEventListener('mouseleave', function() {
-                this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
-            });
-        }
     </script>
 </body>
 </html>

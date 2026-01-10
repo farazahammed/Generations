@@ -3,8 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRZ Generations</title>
+
+    <title>FRZ Generations | Educational Tools, Quiz Generators, Notes & Productivity Apps</title>
+
+    <!-- Basic SEO -->
+    <meta name="title" content="FRZ Generations | Educational Tools, Quiz Generators, Notes & Productivity Apps">
+    <meta name="description" content="FRZ Generations is a suite of powerful educational tools created by Faraz Ahammed CM, including quiz generators, flashcards, SSLC notes, study timers, PDF tools, and more for Kerala and global students.">
+    <meta name="keywords" content="FRZ Generations, Faraz Ahammed CM, quiz generator, flashcard generator, SSLC notes, Kerala SSLC, question paper generator, answer key generator, study timer, PDF splitter, education tools, student productivity">
+    <meta name="author" content="Faraz Ahammed CM">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="en">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://frz-generations.example.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FRZ Generations | Smart Educational Tools by Faraz Ahammed CM">
+    <meta property="og:description" content="Discover FRZ Generations, founded by Faraz Ahammed CM, featuring quiz and question paper generators, SSLC notes, study timer, flashcards, and PDF tools for students and teachers.">
+    <meta property="og:url" content="https://frz-generations.example.com/">
+    <meta property="og:site_name" content="FRZ Generations">
+    <!-- Replace with your real social preview image -->
+    <meta property="og:image" content="https://frz-generations.example.com/assets/frz-generations-banner.png">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FRZ Generations | Quiz, Notes, Flashcards & Study Tools">
+    <meta name="twitter:description" content="FRZ Generations, founded by Faraz Ahammed CM, offers quiz generators, SSLC notes, flashcards, study timers, and more to make learning easier.">
+    <meta name="twitter:image" content="https://frz-generations.example.com/assets/frz-generations-banner.png">
+
+    <!-- Organization Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FRZ Generations",
+      "url": "https://frz-generations.example.com/",
+      "logo": "https://frz-generations.example.com/assets/frz-generations-logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Faraz Ahammed CM"
+      },
+      "foundingDate": "2025",
+      "description": "FRZ Generations is an educational technology brand founded by Faraz Ahammed CM that builds quiz generators, SSLC notes, flashcards, study timers, PDF tools, and question paper generators for students and teachers.",
+      "sameAs": [
+        "https://farazahammedcm.netlify.app"
+      ]
+    }
+    </script>
+
+    <!-- Styles & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -61,6 +114,12 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1.6;
+        }
+
+        .founder-text {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #ffc48a;
         }
 
         .projects-grid {
@@ -142,7 +201,6 @@
             transition: transform 0.3s ease;
         }
 
-        /* All boxes have identical orange styling */
         .quiz-box,
         .notes-box,
         .questionpaper-box,
@@ -150,28 +208,24 @@
             position: relative;
         }
 
-        /* Remove all special borders and colors */
         .notes-box,
         .questionpaper-box,
         .answerkey-box {
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Remove all special before gradients */
         .notes-box::before,
         .questionpaper-box::before,
         .answerkey-box::before {
             background: linear-gradient(90deg, #ff8c00, #ffa500);
         }
 
-        /* Remove all special icon colors */
         .notes-box .project-icon,
         .questionpaper-box .project-icon,
         .answerkey-box .project-icon {
             color: #ff8c00;
         }
 
-        /* Remove all badges/after elements */
         .notes-box::after,
         .questionpaper-box::after,
         .answerkey-box::after {
@@ -204,7 +258,6 @@
             font-style: italic;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -259,7 +312,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Hover animations for icons */
         .profile-icon:hover {
             animation: profileGrow 0.8s ease-in-out;
         }
@@ -292,7 +344,6 @@
             animation: keyGenerate 1s ease-in-out infinite;
         }
 
-        /* Icon colors - all orange theme */
         .project-icon {
             color: #ff8c00;
         }
@@ -328,87 +379,88 @@
         <header>
             <h1 class="main-heading">FRZ GENERATIONS</h1>
             <p class="tagline">A collection of innovative web projects and tools created with passion and precision. Each project showcases unique solutions to modern challenges in education, productivity, and technology.</p>
+            <p class="founder-text">FRZ Generations was founded by <strong>Faraz Ahammed CM</strong>, focusing on building modern educational technology and productivity tools for students and teachers.</p>
         </header>
 
         <div class="projects-grid">
             <!-- Faraz Portfolio -->
             <div class="project-box">
                 <div class="project-icon profile-icon">
-                    <i class="fas fa-user-circle"></i>
+                    <i class="fas fa-user-circle" aria-hidden="true"></i>
                 </div>
                 <h3 class="project-title">Faraz Portfolio</h3>
-                <p class="project-description">My personal portfolio showcasing skills, projects, and professional journey with detailed experience in web development and AI technologies.</p>
-                <a href="https://farazahammedcm.netlify.app" class="project-link" target="_blank"></a>
+                <p class="project-description">Personal portfolio of Faraz Ahammed CM showcasing skills, projects, and professional journey in web development, AI, and educational technology solutions.</p>
+                <a href="https://farazahammedcm.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer"></a>
             </div>
 
             <!-- Study Alarm -->
             <div class="project-box">
                 <div class="project-icon timer-icon">
-                    <i class="fas fa-hourglass-half"></i>
+                    <i class="fas fa-hourglass-half" aria-hidden="true"></i>
                 </div>
                 <h3 class="project-title">Study Alarm</h3>
-                <p class="project-description">Productivity timer that helps students manage study sessions with Pomodoro technique, progress tracking, and study analytics.</p>
-                <a href="https://frzstudytimer.netlify.app" class="project-link" target="_blank"></a>
+                <p class="project-description">Productivity timer that helps students manage focused study sessions with Pomodoro technique, progress tracking, and simple study analytics for exam preparation.</p>
+                <a href="https://frzstudytimer.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer"></a>
             </div>
 
             <!-- PDF Splitter -->
             <div class="project-box">
                 <div class="project-icon pdf-icon">
-                    <i class="fas fa-file-export"></i>
+                    <i class="fas fa-file-export" aria-hidden="true"></i>
                 </div>
                 <h3 class="project-title">PDF Splitter Tool</h3>
-                <p class="project-description">Split large PDF files by page range, extract specific pages, or separate into multiple documents with batch processing capabilities.</p>
-                <a href="https://frzpdfsplitter.netlify.app" class="project-link" target="_blank"></a>
+                <p class="project-description">Split large PDF files by page range, extract key pages, or separate into multiple documents with simple batch processing for teachers and students.</p>
+                <a href="https://frzpdfsplitter.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer"></a>
             </div>
 
             <!-- Quiz Generator -->
             <div class="project-box quiz-box">
                 <div class="project-icon quiz-icon">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-question-circle" aria-hidden="true"></i>
                 </div>
                 <h3 class="project-title">Quiz Generator</h3>
-                <p class="project-description">Create custom quizzes from topics, PDFs, URLs, or browser content with multiple question types and difficulty levels.</p>
-                <a href="https://frzquizgenerator.netlify.app" class="project-link" target="_blank"></a>
+                <p class="project-description">Create custom quizzes from topics, PDFs, URLs, or browser content with multiple question types, difficulty levels, and automatic formatting for tests.</p>
+                <a href="https://frzquizgenerator.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer"></a>
             </div>
 
             <!-- Flashcard Generator -->
             <div class="project-box">
                 <div class="project-icon flashcard-icon">
-                    <i class="fas fa-clone"></i>
+                    <i class="fas fa-clone" aria-hidden="true"></i>
                 </div>
                 <h3 class="project-title">Flashcard Generator</h3>
-                <p class="project-description">Create interactive flashcards for efficient learning with spaced repetition, progress tracking, and easy content organization.</p>
-                <a href="https://frzflashcardgenerator.netlify.app" class="project-link" target="_blank"></a>
+                <p class="project-description">Create interactive flashcards for efficient learning with spaced repetition, progress tracking, and subject-wise content organization.</p>
+                <a href="https://frzflashcardgenerator.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer"></a>
             </div>
 
             <!-- FRZ Notes SSLC -->
             <div class="project-box notes-box">
                 <div class="project-icon notes-icon">
-                    <i class="fas fa-book-open"></i>
+                    <i class="fas fa-book-open" aria-hidden="true"></i>
                 </div>
                 <h3 class="project-title">FRZ Notes SSLC</h3>
-                <p class="project-description">Comprehensive SSLC study notes, revision materials, and practice questions for Kerala state syllabus students.</p>
-                <a href="https://frz-notes.blogspot.com" class="project-link" target="_blank"></a>
+                <p class="project-description">Comprehensive SSLC study notes, revision materials, and practice questions for Kerala state syllabus students preparing for board examinations.</p>
+                <a href="https://frz-notes.blogspot.com" class="project-link" target="_blank" rel="noopener noreferrer"></a>
             </div>
 
             <!-- FRZ Question Paper Generator -->
             <div class="project-box questionpaper-box">
                 <div class="project-icon questionpaper-icon">
-                    <i class="fas fa-file-alt"></i>
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
                 </div>
                 <h3 class="project-title">FRZ Question Paper Generator</h3>
-                <p class="project-description">Generate customized question papers with different question types, difficulty levels, and automatic answer key generation.</p>
-                <a href="https://frzquestionpapergenerator.netlify.app" class="project-link" target="_blank"></a>
+                <p class="project-description">Generate customized question papers with multiple question types, difficulty levels, and automatic structure suitable for exams and tests.</p>
+                <a href="https://frzquestionpapergenerator.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer"></a>
             </div>
 
             <!-- FRZ Answer Key Generator -->
             <div class="project-box answerkey-box">
                 <div class="project-icon answerkey-icon">
-                    <i class="fas fa-key"></i>
+                    <i class="fas fa-key" aria-hidden="true"></i>
                 </div>
                 <h3 class="project-title">FRZ Answer Key Generator</h3>
-                <p class="project-description">Create accurate answer keys for question papers with automatic scoring, solution explanations, and answer validation.</p>
-                <a href="https://frzanswerkeygenerator.netlify.app" class="project-link" target="_blank"></a>
+                <p class="project-description">Create accurate answer keys for question papers with automatic scoring support and quick validation for teachers and self-assessment.</p>
+                <a href="https://frzanswerkeygenerator.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer"></a>
             </div>
         </div>
     </div>
@@ -420,10 +472,8 @@
     </footer>
 
     <script>
-        // Add click animation to project boxes
         document.querySelectorAll('.project-box').forEach(box => {
             box.addEventListener('click', function() {
-                // Add a ripple effect on click
                 const ripple = document.createElement('div');
                 ripple.style.position = 'absolute';
                 ripple.style.borderRadius = '50%';
@@ -443,7 +493,6 @@
             });
         });
 
-        // Add CSS for ripple animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes ripple {
@@ -456,7 +505,6 @@
         `;
         document.head.appendChild(style);
         
-        // Enhance hover effects for all boxes
         document.querySelectorAll('.project-box').forEach(box => {
             box.addEventListener('mouseenter', function() {
                 this.style.boxShadow = '0 15px 30px rgba(255, 140, 0, 0.3)';
@@ -467,11 +515,9 @@
             });
         });
 
-        // Enhanced icon hover animations
         const icons = document.querySelectorAll('.project-icon');
         icons.forEach(icon => {
             icon.addEventListener('mouseenter', function() {
-                // Add glow effect
                 this.style.textShadow = '0 0 15px rgba(255, 140, 0, 0.7)';
                 this.style.color = '#ffa500';
             });
